@@ -44,7 +44,7 @@ const Sidebar = (props: Props) => {
             return <SidebarItem key={index} item={item} />;
           })}
         </div>
-        <div className="flex flex-col items-center border-t border-[#E0E0E0] h-[25vh]">
+        <div className="flex flex-col items-center border-t border-[#E0E0E0] h-[17vh]">
           <button className="flex items-center cursor-pointer py-[10px] px-[22px] w-44 rounded-[6px] bg-transparent text-[#202224]">
             <span className="text-sm font-semibold">Logout</span>
           </button>
