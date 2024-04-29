@@ -1,3 +1,6 @@
+@import url("https://fonts.cdnfonts.com/css/nunito-sans");
+@import url("https://fonts.cdnfonts.com/css/avantgarde-bk-bt-2");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
