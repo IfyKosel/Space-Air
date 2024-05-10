@@ -19,7 +19,7 @@ export default function AnalyticsLayout({
         <Sidebar />
         <div className="flex flex-col w-full">
           <Navbar />
-          <div className="w-full h-[calc(100vh-3.8rem)] bg-[#F5F6FA]">
+          <div className="w-full min-h-[calc(100vh-3.8rem)] bg-[#F5F6FA]">
             {children}
           </div>
         </div>
