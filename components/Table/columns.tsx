@@ -1,5 +1,5 @@
 "use client";
-import { DashboardRowProps } from "@/types/types";
+import { DashboardRowProps, UserRowProps } from "@/types/types";
 import { ColumnDef } from "@tanstack/react-table";
 import {
   DropdownMenu,
@@ -12,6 +12,7 @@ import {
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Menu from "@/components/Table/assest/menu.svg";
+import { Checkbox } from "../ui/checkbox";
 
 export const dashboardCol: ColumnDef<DashboardRowProps>[] = [
   {
@@ -92,6 +93,97 @@ export const dashboardCol: ColumnDef<DashboardRowProps>[] = [
             <DropdownMenuSeparator />
             <DropdownMenuItem>View customer</DropdownMenuItem>
             <DropdownMenuItem>View payment details</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      );
+    },
+  },
+];
+
+export const userCol: ColumnDef<UserRowProps>[] = [
+  {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
+    header: "Date",
+    accessorKey: "date",
+    cell: ({ row }) => <div className="">{row.getValue("date")}</div>,
+  },
+  {
+    header: "User ID",
+    accessorKey: "userID",
+    cell: ({ row }) => <div className="">{row.getValue("userID")}</div>,
+  },
+  {
+    header: "First Name",
+    accessorKey: "firstName",
+    cell: ({ row }) => <div className="">{row.getValue("firstName")}</div>,
+  },
+  {
+    header: "Last Name",
+    accessorKey: "lastName",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("lastName")}</div>
+    ),
+  },
+  {
+    header: "Phone Number",
+    accessorKey: "phone",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("phone")}</div>
+    ),
+  },
+  {
+    header: "Email",
+    accessorKey: "email",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("email")}</div>
+    ),
+  },
+  {
+    header: "Bookings",
+    accessorKey: "bookings",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("bookings")}</div>
+    ),
+  },
+  {
+    id: "actions",
+    enableHiding: false,
+    cell: ({ row }) => {
+      const payment = row.original;
+
+      return (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="h-8 w-8 p-0">
+              <span className="sr-only">Open menu</span>
+              <Image src={Menu} alt="Menu" className="w-auto" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="bg-white">
+            <DropdownMenuItem>View </DropdownMenuItem>
+            <DropdownMenuItem>Block</DropdownMenuItem>
+            <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

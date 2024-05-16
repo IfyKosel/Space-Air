@@ -1,4 +1,4 @@
-import { dashboardRow } from "@/Utils/constant";
+import { dashboardRow, userRow } from "@/Utils/constant";
 import { StaticImageData } from "next/image";
 import { JSXElementConstructor } from "react";
 
@@ -18,7 +18,17 @@ export type HeaderStatProps ={
 
 // export type TablePage = {pageContent: () => JSX.Element}
 
-export type DashboardRowProps = (typeof dashboardRow)[number]  
+export type DashboardRowProps = (typeof dashboardRow)[number]
+
+export type UserRowProps = {
+	date: string;
+    userID: string;
+    firstName: string;
+    lastName: string;
+    phone: string;
+    email: string;
+    bookings: string;
+}
 
 export type ChartOption = {
 	title?: {
@@ -95,4 +105,21 @@ export type ChartOption = {
 	id: string;
 	title: string;
   };
+
+  export type AvailableFlightProps = {
+	id: string;
+	airline: string;
+	departureTime: string;
+	arrivalTime: string;
+	departure: string;
+	destination: string;
+	estimatedTime: string;
+	desc: string;
+	price: string;
+	status: string;
+  }[];
+
+  export interface FilterObject {
+	[key: string]: any;
+  }
   

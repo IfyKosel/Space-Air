@@ -15,7 +15,7 @@ export default function AnalyticsLayout({
 }) {
   return (
     <section>
-      <main className="w-full flex">
+      <main className="w-full flex ">
         <Sidebar />
         <div className="flex flex-col w-full">
           <Navbar />
