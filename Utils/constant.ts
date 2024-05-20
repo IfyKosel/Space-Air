@@ -1,3 +1,5 @@
+import { AvailableFlightProps } from "@/types/types";
+
 export const dashboardRow = [
 	{
 	bookingId: "892736120",
@@ -57,3 +59,54 @@ export const userRow = [
 			bookings: "8",
 			},
 		]
+
+export const availableFlight: AvailableFlightProps = [
+    {
+      id: "1",
+      airline: "Arik Air",
+      departureTime: "02:50",
+      arrivalTime: "21:15",
+      departure: "INSTABUL-(IST)",
+      destination: "Dubai(DXB)",
+      estimatedTime: "01:20 mins",
+      desc: "20kg",
+      price: "₦",
+      reservationNumber: "123456",
+      ticketNumber: "123456789123",
+      bookingDate: "Saturday, August 27, 2023 Sep 18",
+      flightTime: "15:30",
+      status: "Confirmed",
+    },
+    {
+      id: "2",
+      airline: "Fly Emirates",
+      departureTime: "02:50",
+      arrivalTime: "21:15",
+      departure: "INSTABUL-(IST)",
+      destination: "Dubai",
+      estimatedTime: "01:20 mins",
+      desc: "20kg",
+      price: "₦",
+      reservationNumber: "123456",
+      ticketNumber: "123456789123",
+      bookingDate: "Saturday, August 27, 2023 Sep 18",
+      flightTime: "15:30",
+      status: "Confirmed",
+    },
+    {
+      id: "3",
+      airline: "quartar Airways",
+      departureTime: "02:50",
+      arrivalTime: "21:15",
+      departure: "INSTABUL-(IST)",
+      destination: "Dubai",
+      estimatedTime: "01:20 mins",
+      desc: "20kg",
+      price: "₦",
+      reservationNumber: "123456",
+      ticketNumber: "123456789123",
+      bookingDate: "Saturday, August 27, 2023 Sep 18",
+      flightTime: "15:30",
+      status: "Confirmed",
+    },
+  ];

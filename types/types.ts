@@ -116,8 +116,19 @@ export type ChartOption = {
 	estimatedTime: string;
 	desc: string;
 	price: string;
+	reservationNumber: string;
+	ticketNumber: string;
+	bookingDate: string;
+	flightTime: string;
 	status: string;
   }[];
+
+  export type FlightDetailsProps = {
+      id: string;
+      passportNumber: string;
+      dob: string;
+      passengerName: string;
+    }[];
 
   export interface FilterObject {
 	[key: string]: any;
