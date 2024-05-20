@@ -131,9 +131,12 @@ const Filters = ({ defaultFilters }: Props) => {
           <Image src={FilterIcon} alt="filter" width={19} height={22} />
         </div>
         {defaultFilters &&
-          defaultFilters.map((filter) => {
+          defaultFilters.map((filter, index) => {
             return (
-              <div className="border-l-[0.6px] border-[#D5D5D5] h-full flex items-center">
+              <div
+                key={index}
+                className="border-l-[0.6px] border-[#D5D5D5] h-full flex items-center"
+              >
                 {stepToRender(filter.name)}
               </div>
             );
