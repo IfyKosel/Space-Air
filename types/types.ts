@@ -134,3 +134,7 @@ export type ChartOption = {
 	[key: string]: any;
   }
   
+  export type CabinOptionProps = {
+	key: string;
+	text: string;
+  };
