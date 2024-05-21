@@ -143,3 +143,8 @@ export type ChartOption = {
 	key: string;
 	text: string;
   };
+
+  export type PaymentOptionProps = {
+	key: string;
+	text: string;
+  };

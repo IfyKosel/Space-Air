@@ -43,7 +43,7 @@ const Cabin = (props: Props) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-white rounded-[16px] absolute -top-3 -left-10">
         <div className="text-[#202224] w-[35.5rem] font-nunito">
-          <div className="px-5">
+          <div className="px-5 pb-1.5">
             <h1 className="text-lg font-bold mt-2">Select Cabin</h1>
             <div className="flex flex-wrap gap-3 py-5">
               {cabinOptions.map((cabin, index) => {
