@@ -51,7 +51,7 @@ const Cabin = (props: Props) => {
                   <button
                     key={index}
                     type="submit"
-                    className="border-[0.6px] border-[#979797] rounded-[20px] w-[10.5rem] bg-transparent text-sm text-start px-5 py-2 font-semibold"
+                    className="border-[0.6px] border-[#979797] rounded-[20px] w-[9rem] bg-transparent text-sm text-start px-2.5 py-1.5 font-semibold"
                   >
                     {cabin.text}
                   </button>

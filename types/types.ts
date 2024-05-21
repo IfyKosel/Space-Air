@@ -138,3 +138,8 @@ export type ChartOption = {
 	key: string;
 	text: string;
   };
+
+  export type FlightOptionProps = {
+	key: string;
+	text: string;
+  };
