@@ -103,6 +103,7 @@ type Props = {
     payment?: string;
   }[];
 };
+2;
 
 const Filters = ({ defaultFilters }: Props) => {
   const stepToRender = (key: string | undefined) => {
@@ -115,10 +116,10 @@ const Filters = ({ defaultFilters }: Props) => {
         return <Name />;
       case "cabin":
         return <Cabin />;
-      case "payment":
-        return <Payment />;
       case "flight":
         return <Flight />;
+      case "payment":
+        return <Payment />;
 
       default:
         break;

@@ -35,7 +35,7 @@ const Flight = (props: Props) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-white rounded-[16px] absolute -top-3 -left-10">
-        <div className="text-[#202224] w-[11.7rem] font-nunito">
+        <div className="text-[#202224] max-w-[11.7rem] font-nunito">
           <div className="px-5  pb-1.5">
             <h1 className="text-lg font-bold mt-2">Select Flight</h1>
             <div className="flex flex-wrap gap-3 py-5">

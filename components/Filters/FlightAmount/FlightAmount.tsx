@@ -11,18 +11,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Dropdown from "@/components/Filters/assets/Dropdown.svg";
 
-type Props = {
-  filters: FilterObject | null;
-  setFilters: React.Dispatch<React.SetStateAction<FilterObject | null>>;
-};
+type Props = {};
 
 const FlightAmount = () => {
-  const [selectedOption, setSelectedOption] = useState("");
-  //   useEffect(() => {
-  //     const updatedFilters = { ...filters, role: selectedOption };
-  //     setFilters(updatedFilters); // Update parent filter object
-  //   }, [selectedOption]);
-
   return (
     <div>
       <div className="flex items-center h-full ">

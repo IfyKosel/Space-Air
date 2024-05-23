@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { FilterObject } from "@/types/types";
+"use client";
+import React from "react";
 import {
   Popover,
   PopoverContent,

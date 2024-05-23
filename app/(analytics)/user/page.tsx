@@ -3,10 +3,10 @@
 import React from "react";
 import Filter from "@/components/Filters/Filters";
 import Export from "@/components/Export/Export";
-import NewUser from "@/components/NewUser/NewUser";
 import DataTable from "@/components/Table/DataTable";
 import { userRow } from "@/Utils/constant";
 import { userCol } from "@/components/Table/columns";
+import NewUser from "./_components/NewUser/NewUser";
 
 type Props = {};
 
