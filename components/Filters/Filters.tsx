@@ -103,6 +103,7 @@ type Props = {
     payment?: string;
   }[];
 };
+2;
 
 const Filters = ({ defaultFilters }: Props) => {
   const stepToRender = (key: string | undefined) => {
@@ -115,10 +116,10 @@ const Filters = ({ defaultFilters }: Props) => {
         return <Name />;
       case "cabin":
         return <Cabin />;
-      case "payment":
-        return <Payment />;
       case "flight":
         return <Flight />;
+      case "payment":
+        return <Payment />;
 
       default:
         break;
@@ -131,9 +132,12 @@ const Filters = ({ defaultFilters }: Props) => {
           <Image src={FilterIcon} alt="filter" width={19} height={22} />
         </div>
         {defaultFilters &&
-          defaultFilters.map((filter) => {
+          defaultFilters.map((filter, index) => {
             return (
-              <div className="border-l-[0.6px] border-[#D5D5D5] h-full flex items-center">
+              <div
+                key={index}
+                className="border-l-[0.6px] border-[#D5D5D5] h-full flex items-center"
+              >
                 {stepToRender(filter.name)}
               </div>
             );

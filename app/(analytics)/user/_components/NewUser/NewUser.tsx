@@ -6,8 +6,8 @@ import {
   AlertDialogContent,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import UserInformation from "./UserInformation/UserInformation";
-import BookingHistory from "./BookingHistory/BookingHistory";
+import UserInformation from "../UserInformation/UserInformation";
+import BookingHistory from "../BookingHistory/BookingHistory";
 
 type Props = {};
 

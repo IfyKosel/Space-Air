@@ -1,6 +1,5 @@
 import { dashboardRow, userRow } from "@/Utils/constant";
 import { StaticImageData } from "next/image";
-import { JSXElementConstructor } from "react";
 
 export type SidebarItemProps = {
 	title: string;
@@ -14,10 +13,6 @@ export type HeaderStatProps ={
 	percent: string;
 }
 
-// export type TableCol = { tableHead: string };
-
-// export type TablePage = {pageContent: () => JSX.Element}
-
 export type DashboardRowProps = (typeof dashboardRow)[number]
 
 export type UserRowProps = {
@@ -28,6 +23,18 @@ export type UserRowProps = {
     phone: string;
     email: string;
     bookings: string;
+}
+
+export type BookingsRowProps = {
+	bookingDate: string;
+	bookingId: string;
+	departure: string;
+	destination: string;
+	pas: number;
+	trip: string;
+	cabin: string;
+	payment: string;
+	bookingStatus: string;
 }
 
 export type ChartOption = {
@@ -116,10 +123,52 @@ export type ChartOption = {
 	estimatedTime: string;
 	desc: string;
 	price: string;
+	reservationNumber: string;
+	ticketNumber: string;
+	bookingDate: string;
+	flightTime: string;
 	status: string;
   }[];
+
+  export type FlightDetailsProps = {
+      id: string;
+      passportNumber: string;
+      dob: string;
+      passengerName: string;
+    }[];
 
   export interface FilterObject {
 	[key: string]: any;
   }
   
+  export type CabinOptionProps = {
+	key: string;
+	text: string;
+  };
+
+  export type FlightOptionProps = {
+	key: string;
+	text: string;
+  };
+
+  export type PaymentOptionProps = {
+	key: string;
+	text: string;
+  };
+
+  export type PassengerAmountProps = {
+	text: string;
+  }
+
+  export type UserDetailsProps = {
+	id: string;
+	passportNumber: string;
+	dob: string;
+	passengerName: string;
+  }[];
+
+  export type BookingSectionProps = {
+	image: StaticImageData;
+	title: string;
+	component: React.ReactNode;
+  }
