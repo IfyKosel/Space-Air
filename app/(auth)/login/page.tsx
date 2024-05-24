@@ -1,7 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
 import OvalTL from "@/app/(auth)/login/assets/OvaltopL.svg";
 import OvalTR from "@/app/(auth)/login/assets/OvaltopR.svg";
 import OvalBL from "@/app/(auth)/login/assets/OvalbottomL.svg";
@@ -11,10 +11,11 @@ import { FieldValues, useForm } from "react-hook-form";
 type Props = {};
 
 const Login = (props: Props) => {
-  const { register, handleSubmit, getValues } = useForm();
+  const { register, handleSubmit, getValues, reset } = useForm();
 
   const handleOnSubmit = (data: FieldValues) => {
     const formData = getValues();
+    reset();
     console.log(formData);
   };
 
