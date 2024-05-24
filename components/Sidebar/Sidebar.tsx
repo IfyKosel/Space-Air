@@ -34,7 +34,7 @@ const Sidebar = (props: Props) => {
   ];
 
   return (
-    <div className="flex flex-col bg-white h-screen w-[15rem] sticky gap-2">
+    <div className="flex flex-col bg-white h-screen w-[15rem] sticky gap-2 top-0">
       <div className="flex justify-center items-center h-[3.8rem] mb-3">
         <Image src={logo} alt="logo" className="w-auto" />
       </div>

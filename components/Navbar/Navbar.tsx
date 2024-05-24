@@ -7,7 +7,7 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="h-[3.8rem] bg-white flex items-center sticky z-[1000]">
+    <div className="h-[3.8rem] bg-white flex items-center sticky z-[1000] top-0">
       <div className="flex justify-between items-center w-full px-10">
         <div className="flex gap-4 bg-[#F5F6FA] border border-[#D5D5D5] px-6 py-2 ml-3 rounded-3xl">
           <Image src={Search} alt="Search" className="w-auto" />
