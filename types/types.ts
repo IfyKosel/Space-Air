@@ -172,3 +172,9 @@ export type ChartOption = {
 	title: string;
 	component: React.ReactNode;
   }
+
+  export type EventColumnProps = {
+	image: StaticImageData;
+	event_title: string;
+	button_description: string;
+  }
