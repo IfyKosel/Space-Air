@@ -51,28 +51,30 @@ const MySite = (props: Props) => {
 
   return (
     <div className="p-5 text-[#202224]">
-      <h1 className="font-bold text-3xl mb-5">MySites</h1>
+      <h1 className="font-bold text-[22px] sm:text-3xl mb-5">MySites</h1>
 
-      <div className="flex gap-5">
-        <div className="flex flex-col bg-white p-5 border-[#B9B9B9] border-[0.5px] rounded-[8px] max-h-[30rem] w-fit">
-          <p className="font-bold mb-5">Columns</p>
-          {pageOption.map(({ key, page, pageNumber }) => {
-            const isActive = selectedPage === key;
-            return (
-              <span
-                onClick={() => handleClickPage(key)}
-                key={key}
-                className={`text-sm cursor-pointer font-semibold w-[13rem] px-4 py-3 flex justify-between ${
-                  isActive && "text-[#4880FF] bg-[#487fff4c] rounded"
-                }`}
-              >
-                <span>{page}</span>
-                <span>{pageNumber}</span>
-              </span>
-            );
-          })}
+      <div className="flex flex-col md:flex-row gap-5">
+        <div className="flex-[1] flex-col bg-white p-3 sm:p-5 border-[#B9B9B9] border-[0.5px] rounded-[8px] h-fit md:h-[100vh] w-fit mx-auto md:mx-0">
+          <p className="font-bold mb-3 sm:mb-5 text-sm sm:text-base">Columns</p>
+          <div className="flex flex-wrap md:flex-col">
+            {pageOption.map(({ key, page, pageNumber }) => {
+              const isActive = selectedPage === key;
+              return (
+                <span
+                  onClick={() => handleClickPage(key)}
+                  key={key}
+                  className={`text-xs sm:text-sm cursor-pointer font-semibold px-2 sm:px-4 py-2 sm:py-3 flex justify-between gap-3 md:gap-1 ${
+                    isActive && "text-[#4880FF] bg-[#487fff4c] rounded"
+                  }`}
+                >
+                  <span>{page}</span>
+                  <span>{pageNumber}</span>
+                </span>
+              );
+            })}
+          </div>
         </div>
-        <div className="bg-white p-5 border-[#B9B9B9] border-[0.5px] rounded-[8px] w-full">
+        <div className="flex-[3] bg-white p-5 border-[#B9B9B9] border-[0.5px] rounded-[8px] w-full">
           {stepToRender(selectedPage)}
         </div>
       </div>

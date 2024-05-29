@@ -12,79 +12,33 @@ import {
   AlertDialogContent,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { EventColumnProps } from "@/types/types";
+import { UploadDropzone } from "@/Utils/uploadthing";
 
 type Props = {};
 
 const Column1 = (props: Props) => {
-  const { register, handleSubmit, getValues, reset } = useForm();
-  const [file, setFile] = useState<File>();
+  const [imageUrl1, setImageUrl1] = useState(Island);
+  const [imageUrl2, setImageUrl2] = useState(Bridge);
+  const [imageUrl3, setImageUrl3] = useState(Rubble);
+  const [imageUrl4, setImageUrl4] = useState(Dubai);
 
-  //   const [selectedImage, setSelectedImage] = useState<
-  //     string | ArrayBuffer | null
-  //   >(null);
-
-  //   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //     const file = e.target.files?.[0];
-  //     // Check if a file was selected
-  //     if (file) {
-  //       // Use FileReader to read the file and convert it to a data URL
-  //       const reader = new FileReader();
-  //       reader.onloadend = () => {
-  //         setSelectedImage(reader.result);
-  //       };
-  //       reader.readAsDataURL(file);
-  //     }
-  //   };
+  const { register, handleSubmit, reset } = useForm();
 
   const handleOnSubmit = (data: FieldValues) => {
-    const formData = getValues();
+    data.imageUrls = { imageUrl1, imageUrl2, imageUrl3, imageUrl4 };
+    console.log(data);
     reset();
-    console.log(formData);
   };
 
-  const eventColumn: EventColumnProps[] = [
-    {
-      image: Island,
-      event_title: "The best swimming season",
-      button_description: "Buying Kish flight tickets",
-    },
-    {
-      image: Bridge,
-      event_title: "Travel to Türkiye",
-      button_description: "Buying Turkish flight tickets",
-    },
-    {
-      image: Rubble,
-      event_title: "A world of history and art",
-      button_description: "Enter event name",
-    },
-    {
-      image: Dubai,
-      event_title: "Wonder in the desert",
-      button_description: "Buying Dubai flight tickets",
-    },
-  ];
   return (
     <div>
-      <div>
-        <input
-          type="file"
-          onChange={(e) => {
-            setFile(e.target.files?.[0]);
-          }}
-        />
-        <button type="button" className="bg-blue-500 px-5 text-white">
-          upload
-        </button>
-      </div>
-      <p className="font-bold mb-5">Column 1</p>
+      <p className="font-bold mb-5 text-sm sm:text-base">Column 1</p>
       <form
         onSubmit={handleSubmit(handleOnSubmit)}
         className="flex flex-col gap-8"
       >
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-2 text-sm">
+          <div className="flex flex-col gap-2 text-xs sm:text-sm">
             <label htmlFor="header" className="text-[#606060] font-semibold">
               Header
             </label>
@@ -96,7 +50,7 @@ const Column1 = (props: Props) => {
               className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
             />
           </div>
-          <div className="flex flex-col gap-2 text-sm ">
+          <div className="flex flex-col gap-2 text-xs sm:text-sm ">
             <label htmlFor="header" className="text-[#606060] font-semibold">
               Sub - Header
             </label>
@@ -109,84 +63,366 @@ const Column1 = (props: Props) => {
           </div>
         </div>
         <div>
-          <p className="font-bold mb-5">Column Events</p>
+          <p className="font-bold mb-5 text-sm sm:text-base">Column Events</p>
           <div className="flex flex-col gap-7">
-            {eventColumn.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-                >
-                  <div>
-                    <Image src={item.image} alt="Island" className="w-auto" />
-                    {/* {selectedImage && (
-                      <div>
-                        <img
-                          src={selectedImage.toString()}
-                          alt="Uploaded Image"
-                        />
-                      </div>
-                    )} */}
-                    <AlertDialog>
-                      <AlertDialogTrigger asChild>
-                        <p className="text-center text-[#A6A6A6] text-sm cursor-pointer">
-                          Click to replace image
-                        </p>
-                      </AlertDialogTrigger>
-                      <AlertDialogContent className="max-w-[400px]">
-                        <AlertDialogCancel className="px-1 py-0 h-fit font-bold border-none hover:outline rounded-[3px] leading-4 text-end w-fit">
-                          x
-                        </AlertDialogCancel>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          //   onChange={handleImageChange}
-                        />
-                      </AlertDialogContent>
-                    </AlertDialog>
-                  </div>
-                  {/* <input type="file" name="" id="" className="" /> */}
-                  <div className="flex flex-col gap-7">
-                    <div className="flex flex-col gap-2 text-sm">
-                      <label
-                        htmlFor="event"
-                        className="text-[#606060] font-semibold"
-                      >
-                        Event title
-                      </label>
-                      <input
-                        type="text"
-                        id="event"
-                        {...register("event_title")}
-                        placeholder={item.event_title}
-                        className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
-                      />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <Image
+                  src={imageUrl1}
+                  alt="Island"
+                  width={1000}
+                  height={1500}
+                  className="w-auto h-auto rounded"
+                />
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <p className="text-center text-[#A6A6A6] text-xs sm:text-sm cursor-pointer">
+                      Click to replace image
+                    </p>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="w-[85%] sm:max-w-[400px] flex flex-col gap-1 !rounded-[10px] py-5">
+                    <div className="flex justify-between items-start px-5">
+                      <p className="sm:text-lg font-bold mb-0">Media Upload</p>
+                      <AlertDialogCancel className="px-1 py-0 h-fit font-bold border-none hover:outline rounded-[3px] leading-4 text-end w-fit mt-0">
+                        x
+                      </AlertDialogCancel>
                     </div>
-                    <div className="flex flex-col gap-2 text-sm ">
-                      <label
-                        htmlFor="description"
-                        className="text-[#606060] font-semibold"
-                      >
-                        Button Description
-                      </label>
-                      <input
-                        type="text"
-                        id="description"
-                        {...register("button_description")}
-                        placeholder={item.button_description}
-                        className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                    <div className="relative flex flex-col items-center max-h-[80vh] overflow-y-auto pl-5">
+                      <UploadDropzone
+                        endpoint="imageUploader"
+                        appearance={{
+                          button: {
+                            background: "blue",
+                            borderRadius: "6px",
+                            color: "#ffffff",
+                            fontSize: "14px",
+                          },
+                        }}
+                        className="h-[10rem] p-1 mt-0 w-full"
+                        onClientUploadComplete={(res) => {
+                          setImageUrl1(res[0].url);
+                        }}
+                        onUploadError={(error: Error) => {
+                          console.log(`ERROR! ${error.message}`);
+                        }}
                       />
+                      <Image
+                        src={imageUrl1}
+                        alt="Image1"
+                        width={1000}
+                        height={1500}
+                        className="w-auto h-auto"
+                      />
+                      <AlertDialogCancel className="text-white text-xs sm:text-sm bg-[#4880FF] w-full py-1.5 border-none rounded-[6px] outline-none !mt-7">
+                        Confirm Image
+                      </AlertDialogCancel>
                     </div>
-                  </div>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </div>
+              <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-2 text-xs sm:text-sm">
+                  <label
+                    htmlFor="event"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Event title
+                  </label>
+                  <input
+                    type="text"
+                    id="event"
+                    {...register("event_title1")}
+                    placeholder="The best swimming season"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
                 </div>
-              );
-            })}
+                <div className="flex flex-col gap-2 text-xs sm:text-sm ">
+                  <label
+                    htmlFor="description"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Button Description
+                  </label>
+                  <input
+                    type="text"
+                    id="description"
+                    {...register("button_description1")}
+                    placeholder="Buying Kish flight tickets"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <Image
+                  src={imageUrl2}
+                  alt="Image2"
+                  width={1000}
+                  height={1500}
+                  className="w-auto h-auto rounded"
+                />
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <p className="text-center text-[#A6A6A6] text-xs sm:text-sm cursor-pointer">
+                      Click to replace image
+                    </p>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="w-[85%] sm:max-w-[400px] flex flex-col gap-1 !rounded-[10px] py-5">
+                    <div className="flex justify-between items-start px-5">
+                      <p className="sm:text-lg font-bold mb-0">Media Upload</p>
+                      <AlertDialogCancel className="px-1 py-0 h-fit font-bold border-none hover:outline rounded-[3px] leading-4 text-end w-fit mt-0">
+                        x
+                      </AlertDialogCancel>
+                    </div>
+                    <div className="relative flex flex-col items-center max-h-[80vh] overflow-y-auto pl-5">
+                      <UploadDropzone
+                        endpoint="imageUploader"
+                        appearance={{
+                          button: {
+                            background: "blue",
+                            borderRadius: "6px",
+                            color: "#ffffff",
+                            fontSize: "14px",
+                          },
+                        }}
+                        className="h-[10rem] p-1 mt-0 w-full"
+                        onClientUploadComplete={(res) => {
+                          setImageUrl2(res[0].url);
+                        }}
+                        onUploadError={(error: Error) => {
+                          console.log(`ERROR! ${error.message}`);
+                        }}
+                      />
+                      <Image
+                        src={imageUrl2}
+                        alt="Image2"
+                        width={1000}
+                        height={1500}
+                        className="w-auto h-auto"
+                      />
+                      <AlertDialogCancel className="text-white text-xs sm:text-sm bg-[#4880FF] w-full py-1.5 border-none rounded-[6px] outline-none !mt-7">
+                        Confirm Image
+                      </AlertDialogCancel>
+                    </div>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </div>
+              <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-2 text-xs sm:text-sm">
+                  <label
+                    htmlFor="event"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Event title
+                  </label>
+                  <input
+                    type="text"
+                    id="event"
+                    {...register("event_title2")}
+                    placeholder="Travel to Türkiye"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 text-xs sm:text-sm ">
+                  <label
+                    htmlFor="description"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Button Description
+                  </label>
+                  <input
+                    type="text"
+                    id="description"
+                    {...register("button_description2")}
+                    placeholder="Buying Turkish flight tickets"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <Image
+                  src={imageUrl3}
+                  alt="image3"
+                  width={1000}
+                  height={1500}
+                  className="w-auto h-auto"
+                />
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <p className="text-center text-[#A6A6A6] text-xs sm:text-sm cursor-pointer">
+                      Click to replace image
+                    </p>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="w-[85%] sm:max-w-[400px] flex flex-col gap-1 !rounded-[10px] py-5">
+                    <div className="flex justify-between items-start px-5">
+                      <p className="sm:text-lg font-bold mb-0">Media Upload</p>
+                      <AlertDialogCancel className="px-1 py-0 h-fit font-bold border-none hover:outline rounded-[3px] leading-4 text-end w-fit mt-0">
+                        x
+                      </AlertDialogCancel>
+                    </div>
+                    <div className="relative flex flex-col items-center max-h-[80vh] overflow-y-auto pl-5">
+                      <UploadDropzone
+                        endpoint="imageUploader"
+                        appearance={{
+                          button: {
+                            background: "blue",
+                            borderRadius: "6px",
+                            color: "#ffffff",
+                            fontSize: "14px",
+                          },
+                        }}
+                        className="h-[10rem] p-1 mt-0 w-full"
+                        onClientUploadComplete={(res) => {
+                          setImageUrl3(res[0].url);
+                        }}
+                        onUploadError={(error: Error) => {
+                          console.log(`ERROR! ${error.message}`);
+                        }}
+                      />
+                      <Image
+                        src={imageUrl3}
+                        alt="Image3"
+                        width={1000}
+                        height={1500}
+                        className="w-auto h-auto"
+                      />
+                      <AlertDialogCancel className="text-white text-xs sm:text-sm bg-[#4880FF] w-full py-1.5 border-none rounded-[6px] outline-none !mt-7">
+                        Confirm Image
+                      </AlertDialogCancel>
+                    </div>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </div>
+              <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-2 text-xs sm:text-sm">
+                  <label
+                    htmlFor="event"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Event title
+                  </label>
+                  <input
+                    type="text"
+                    id="event"
+                    {...register("event_title3")}
+                    placeholder="A world of history and art"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 text-xs sm:text-sm ">
+                  <label
+                    htmlFor="description"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Button Description
+                  </label>
+                  <input
+                    type="text"
+                    id="description"
+                    {...register("button_description3")}
+                    placeholder="Enter event name"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <Image
+                  src={imageUrl4}
+                  alt="Island"
+                  width={1000}
+                  height={1500}
+                  className="w-auto h-auto"
+                />
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <p className="text-center text-[#A6A6A6] text-xs sm:text-sm cursor-pointer">
+                      Click to replace image
+                    </p>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="w-[85%] sm:max-w-[400px] flex flex-col gap-1 !rounded-[10px] py-5">
+                    <div className="flex justify-between items-start px-5">
+                      <p className="sm:text-lg font-bold mb-0">Media Upload</p>
+                      <AlertDialogCancel className="px-1 py-0 h-fit font-bold border-none hover:outline rounded-[3px] leading-4 text-end w-fit mt-0">
+                        x
+                      </AlertDialogCancel>
+                    </div>
+                    <div className="relative flex flex-col items-center max-h-[80vh] overflow-y-auto pl-5">
+                      <UploadDropzone
+                        endpoint="imageUploader"
+                        appearance={{
+                          button: {
+                            background: "blue",
+                            borderRadius: "6px",
+                            color: "#ffffff",
+                            fontSize: "14px",
+                          },
+                        }}
+                        className="h-[10rem] p-1 mt-0 w-full"
+                        onClientUploadComplete={(res) => {
+                          setImageUrl4(res[0].url);
+                        }}
+                        onUploadError={(error: Error) => {
+                          console.log(`ERROR! ${error.message}`);
+                        }}
+                      />
+                      <Image
+                        src={imageUrl4}
+                        alt="Image4"
+                        width={1000}
+                        height={1500}
+                        className="w-auto h-auto"
+                      />
+                      <AlertDialogCancel className="text-white text-xs sm:text-sm bg-[#4880FF] w-full py-1.5 border-none rounded-[6px] outline-none !mt-7">
+                        Confirm Image
+                      </AlertDialogCancel>
+                    </div>
+                  </AlertDialogContent>
+                </AlertDialog>
+              </div>
+              <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-2 text-xs sm:text-sm">
+                  <label
+                    htmlFor="event"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Event title
+                  </label>
+                  <input
+                    type="text"
+                    id="event"
+                    {...register("event_title4")}
+                    placeholder="Wonder in the desert"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 text-xs sm:text-sm ">
+                  <label
+                    htmlFor="description"
+                    className="text-[#606060] font-semibold"
+                  >
+                    Button Description
+                  </label>
+                  <input
+                    type="text"
+                    id="description"
+                    {...register("button_description4")}
+                    placeholder="Buying Dubai flight tickets"
+                    className="border-[0.6px] border-[#D5D5D5] p-4 outline-none rounded text-[#A6A6A6] bg-[#F5F6FA]"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="mt-10 md:mt-20 flex justify-center md:block">
           <button
             type="submit"
-            className="text-white text-sm w-[70%] md:w-[35%] bg-[#4880FF] px-4 py-2 md:ml-8 rounded-[6px]"
+            className="text-white text-xs sm:text-sm w-[70%] md:w-[35%] bg-[#4880FF] px-4 py-2 md:ml-8 rounded-[6px]"
           >
             Update
           </button>

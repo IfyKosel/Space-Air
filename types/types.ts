@@ -173,8 +173,10 @@ export type ChartOption = {
 	component: React.ReactNode;
   }
 
-  export type EventColumnProps = {
-	image: StaticImageData;
-	event_title: string;
-	button_description: string;
+  export type ReviewDetailsProps = {
+      photo: StaticImageData;
+      name: string;
+      country: string;
+      review: string;
+      ratings: number,
   }
