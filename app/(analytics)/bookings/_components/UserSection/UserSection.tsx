@@ -29,7 +29,7 @@ const UserSection = (props: Props) => {
       <div className="flex flex-col gap-4">
         {userDetails.map((detail) => {
           return (
-            <div key={detail.id} className="flex text-xs sm:text-sm gap-7">
+            <div key={detail.id} className="flex text-xs md:text-sm gap-7">
               <div className="w-fit text-end flex flex-col gap-1">
                 <p className="text-[#606060]">Passport Number</p>
                 <p className="text-[#202020]">{detail.passportNumber}</p>
@@ -38,7 +38,7 @@ const UserSection = (props: Props) => {
                 <p className="text-[#606060]">Date of Birth</p>
                 <p className="text-[#202020]">{detail.dob}</p>
               </div>
-              <div className="w-fit text-end flex flex-col gap-1">
+              <div className="w-fit text-end flex flex-col gap-1  pr-4 min-[450px]:pr-0">
                 <p className="text-[#606060]">Passenger&apos;s Name</p>
                 <p className="text-[#202020]">{detail.passengerName}</p>
               </div>

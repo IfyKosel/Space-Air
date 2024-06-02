@@ -21,10 +21,16 @@ const FlightAmount = () => {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="w-[150px] flex justify-between font-semibold border-none"
+              className="w-fit sm:w-[150px] flex gap-1 sm:gap-2 font-semibold border-none text-xs sm:text-sm"
             >
               <span>Flight Amount</span>
-              <Image src={Dropdown} alt="Dropdown" width={24} height={24} />
+              <Image
+                src={Dropdown}
+                alt="Dropdown"
+                width={24}
+                height={24}
+                className="w-4 sm:w-auto"
+              />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white rounded-[8px] absolute -top-3 -left-10 font-light text-lg">

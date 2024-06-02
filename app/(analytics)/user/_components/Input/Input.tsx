@@ -16,7 +16,7 @@ const Input = ({ label, idName, type }: Props) => {
       />
       <label
         htmlFor={idName}
-        className="text-[#CBCBCB] text-[14px] bg-white px-1 absolute -top-[10px] left-7 capitalize font-avant peer-focus:text-[#1D91CC] translate-y-[-50%]"
+        className="text-[#CBCBCB] text-[14px] bg-white px-1 absolute -top-[1px] left-7 capitalize font-avant peer-focus:text-[#1D91CC] translate-y-[-50%]"
       >
         {label}
       </label>

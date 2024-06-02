@@ -7,7 +7,7 @@ import BookingPayment from "./_components/BookingPayment/BookingPayment";
 type Props = {};
 
 const Bookings = (props: Props) => {
-  const [selectedPage, setSelectedPage] = useState<string>("bookingPayment");
+  const [selectedPage, setSelectedPage] = useState<string>("newBooking");
 
   const handleClickPage = (item: string) => {
     setSelectedPage(item);

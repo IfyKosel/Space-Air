@@ -26,7 +26,7 @@ const BookingHistoryExtended = (props: Props) => {
   ];
 
   return (
-    <div className="flex justify-between w-full pb-5">
+    <div className="flex justify-between w-full gap-6 pb-5">
       <div className="flex flex-col gap-4">
         {flightDetails.map((detail) => {
           return (
@@ -47,7 +47,7 @@ const BookingHistoryExtended = (props: Props) => {
           );
         })}
       </div>
-      <div className="flex flex-col text-xs sm:text-sm items-end justify-end">
+      <div className="flex flex-col text-xs sm:text-sm items-end justify-end pr-4 sm:pr-0">
         <div className="w-fit h-full text-end flex flex-col gap-1 justify-center">
           <p className="text-[#606060]">Flight Class</p>
           <p className="text-[#202020]">Business</p>

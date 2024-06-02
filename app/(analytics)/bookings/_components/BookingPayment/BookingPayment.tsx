@@ -48,16 +48,18 @@ const BookingPayment = (props: Props) => {
                 index !== bookingSection.length - 1 && "border-b"
               }`}
             >
-              <div className="flex justify-center items-center w-[4rem] sm:w-[6.5rem] lg:w-[10rem] border-r">
+              <div className="flex justify-center items-center w-[3.5rem] sm:w-[6.5rem] lg:w-[10rem] border-r">
                 <Image
                   src={section.image}
                   alt={section.title}
                   width={32}
                   height={32}
-                  className="w-6 sm:w-7 lg:w-8"
+                  className="w-5 sm:w-7 lg:w-8"
                 />
               </div>
-              <div className="px-8 py-5 w-full">{section.component}</div>
+              <div className="px-4 sm:px-6 lg:px-8 py-5 overflow-x-auto w-full">
+                {section.component}
+              </div>
             </div>
           );
         })}
@@ -65,9 +67,15 @@ const BookingPayment = (props: Props) => {
       <div className="flex justify-center mt-10">
         <button
           type="button"
-          className="flex gap-1 justify-center items-center text-white text-sm w-[80%] md:w-[50%] bg-[#4880FF] px-4 py-2 rounded-[6px]"
+          className="flex gap-1 justify-center items-center text-white text-xs md:text-sm w-[80%] md:w-[50%] bg-[#4880FF] px-4 py-2 rounded-[6px]"
         >
-          <Image src={ArrowDown} alt="Download" width={16} height={16} />
+          <Image
+            src={ArrowDown}
+            alt="Download"
+            width={16}
+            height={16}
+            className="w-[14px] md:w-auto"
+          />
           Download Ticket
         </button>
       </div>

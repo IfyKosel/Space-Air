@@ -172,3 +172,11 @@ export type ChartOption = {
 	title: string;
 	component: React.ReactNode;
   }
+
+  export type ReviewDetailsProps = {
+      photo: StaticImageData;
+      name: string;
+      country: string;
+      review: string;
+      ratings: number,
+  }

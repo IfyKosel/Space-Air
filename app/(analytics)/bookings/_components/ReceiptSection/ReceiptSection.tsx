@@ -4,7 +4,7 @@ type Props = {};
 
 const ReceiptSection = (props: Props) => {
   return (
-    <div className="w-full flex justify-between items-end">
+    <div className="w-full flex justify-between items-end gap-5">
       <div className="flex gap-6">
         <div className="flex flex-col gap-2 w-fit text-xs md:text-sm text-end">
           <p className="text-[#868686] ">Price per adult</p>
@@ -16,7 +16,7 @@ const ReceiptSection = (props: Props) => {
         </div>
       </div>
       <div>
-        <p className="text-xs sm:text-sm text-[#4880FF]">
+        <p className="text-xs md:text-sm text-[#4880FF] pr-4 min-[500px]:pr-0">
           Payment NGN 34,410,462
         </p>
       </div>

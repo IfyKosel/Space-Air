@@ -66,7 +66,7 @@ const Dashboard = () => {
   return (
     <div className="p-5 border-[#E0E0E0] border-l-[1.2px] h-full font-nunito text-[#202224]">
       <div className="flex flex-col gap-5">
-        <h1 className="font-bold text-3xl">Dashboard</h1>
+        <h1 className="font-bold text-[22px] sm:text-3xl">Dashboard</h1>
         <Header />
         <div className="bg-white p-5">
           <div className=" flex justify-between">
@@ -96,8 +96,10 @@ const Dashboard = () => {
           <div className="">{chartToRender(selectedOption)}</div>
         </div>
 
-        <div className="bg-white p-5 flex flex-col gap-8">
-          <h1 className="text-2xl font-bold mb-6">Recent Bookings</h1>
+        <div className="bg-white p-5 flex flex-col">
+          <h1 className="text-xl sm:text-2xl font-bold mb-6">
+            Recent Bookings
+          </h1>
           <DataTable columns={dashboardCol} data={dashboardRow} />
         </div>
       </div>

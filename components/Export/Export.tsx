@@ -19,10 +19,16 @@ const Export = (props: Props) => {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="w-fit flex gap-1 font-semibold border-[0.6px] border-[#D5D5D5] bg-[#F9F9FB] rounded-[6px] h-full"
+              className="w-fit flex gap-1 font-semibold border-[0.6px] border-[#D5D5D5] bg-[#F9F9FB] rounded-[6px] h-12 md:h-16 text-xs sm:text-sm"
             >
               <span>Export</span>
-              <Image src={Dropdown} alt="Dropdown" width={24} height={24} />
+              <Image
+                src={Dropdown}
+                alt="Dropdown"
+                width={24}
+                height={24}
+                className="w-4 sm:auto"
+              />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-white rounded-[8px] absolute -top-3 -left-10">
