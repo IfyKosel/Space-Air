@@ -67,11 +67,10 @@ const FlightChart = (props: Props) => {
         // min: 0,
         // max: 2000000,
         axisLabel: {
-          textStyle: {
-            color: "#2B303466",
-            fontSize: 12,
-            fontWeight: "600",
-          },
+          color: "#2B303466",
+          fontSize: 12,
+          fontWeight: "600",
+
           //   formatter: (value: number) => {
           //     return `₦${value.toFixed(1)}`;
           //   },
@@ -82,7 +81,7 @@ const FlightChart = (props: Props) => {
       {
         itemStyle: {
           color: "#00B69B",
-          barBorderRadius: [3],
+          barborderRadius: [3],
         },
         name: "Local",
         type: "bar",
@@ -91,7 +90,7 @@ const FlightChart = (props: Props) => {
       {
         itemStyle: {
           color: "#FF9500",
-          barBorderRadius: [3],
+          barborderRadius: [3],
         },
         name: "International",
         type: "bar",

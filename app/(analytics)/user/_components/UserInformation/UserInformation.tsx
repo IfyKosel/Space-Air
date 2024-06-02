@@ -2,14 +2,16 @@ import React from "react";
 import Input from "../Input/Input";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { useForm } from "react-hook-form";
 
 type Props = {};
 
 const UserInformation = (props: Props) => {
+  const { register, reset, handleSubmit } = useForm();
   return (
     <div className="px-5">
-      <form className="pt-2 flex flex-col gap-6">
-        <div className="grid grid-cols-2 gap-10">
+      <form className="pt-2 flex flex-col gap-7">
+        <div className="grid sm:grid-cols-2 gap-7 sm:gap-10">
           <Input label="first name" idName="first_name" type="text" />
           <Input label="last name" idName="last-name" type="text" />
         </div>
@@ -18,6 +20,7 @@ const UserInformation = (props: Props) => {
             country={"ng"}
             containerClass="peer"
             placeholder="+234 8000000000"
+            // {...register("phone")}
             inputClass="outline-none border-[#CBCBCB] border !h-10 !w-full bg-cyan-300 !rounded-[6px] focus:border-[#1D91CC] focus:text-[#1D91CC] focus:text-sm px-4"
           />
           <label className="text-[#CBCBCB] text-[14px] bg-[#ffffff] px-1 absolute top-0 left-7 capitalize font-avant peer-focus:text-[#1D91CC] translate-y-[-50%]">

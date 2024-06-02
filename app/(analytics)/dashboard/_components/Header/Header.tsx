@@ -35,11 +35,13 @@ const Header = (props: Props) => {
           <div key={index} className="w-fit text-[#202224] font-nunito">
             <div className="bg-white px-3 py-2 min-w-[10rem] max-h-[88px] rounded-[6px] flex flex-col gap-1">
               <div className="flex justify-between items-center">
-                <p className="capitalize">{detail.title}</p>
+                <p className="capitalize text-sm sm:text-base">
+                  {detail.title}
+                </p>
                 <p className="text-xs font-semibold">Year</p>
               </div>
               <div className="flex items-center justify-between gap-8">
-                <h1 className="font-bold text-[28px] leading-7">
+                <h1 className="font-bold text-2xl sm:text-[28px] leading-7">
                   {detail.amount}
                 </h1>
                 <div className="flex items-center bg-[#00B69B0D] px-2 py-1 gap-1 rounded-[4px]">

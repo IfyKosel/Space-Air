@@ -14,7 +14,7 @@ const Navbar = (props: Props) => {
           <input
             type="text"
             placeholder="Search"
-            className="bg-transparent outline-0 text-[#202224] text-sm"
+            className="bg-transparent outline-0 text-[#202224] text-sm w-5 sm:w-auto"
           />
         </div>
         <div className="flex items-center gap-10">

@@ -24,12 +24,18 @@ const DatePicker = () => {
           <Button
             variant={"outline"}
             className={cn(
-              "w-fit gap-2 flex justify-between font-semibold border-none",
+              "w-fit gap-1 sm:gap-2 flex font-semibold border-none text-xs sm:text-sm",
               !date && "text-muted-foreground"
             )}
           >
             {date ? format(date, "PPP") : <span>Date</span>}
-            <Image src={Dropdown} alt="Dropdown" width={24} height={24} />
+            <Image
+              src={Dropdown}
+              alt="Dropdown"
+              width={24}
+              height={24}
+              className="w-4 sm:auto"
+            />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0 bg-white rounded-[14px]">

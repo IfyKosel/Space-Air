@@ -94,7 +94,7 @@ const BookingHistory = (props: Props) => {
                       </div>
                     </div>
                   </div>
-                  <AccordionContent>
+                  <AccordionContent className="overflow-x-auto max-w-[381px] min-w-full">
                     <div className="px-4">
                       <div className="flex gap-4 text-xs sm:text-sm mb-7">
                         <div className="w-fit flex flex-col gap-1">

@@ -1,21 +1,26 @@
+"use client";
 import React from "react";
+import { FieldValues, useForm } from "react-hook-form";
 
 type Props = {};
 
 const ContactInfo = (props: Props) => {
+  const { register, handleSubmit, reset } = useForm();
+
+  const handleOnSubmit = (data: FieldValues) => {
+    console.log(data);
+  };
   return (
     <div>
       <form
-        action=""
+        onSubmit={handleSubmit(handleOnSubmit)}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
         <label htmlFor="Username" className="relative w-full block">
           <input
             type="text"
             id="FirstName"
-            name="firstname"
-            // value={formData.firstname}
-            // onChange={handleChange}
+            {...register("first_name")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="FirstName"
           />
@@ -28,9 +33,7 @@ const ContactInfo = (props: Props) => {
           <input
             type="text"
             id="lastname"
-            name="lastname"
-            // value={formData.lastname}
-            // onChange={handleChange}
+            {...register("last_name")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="lastname"
           />
@@ -43,9 +46,7 @@ const ContactInfo = (props: Props) => {
           <input
             type="text"
             id="PhoneNumber"
-            name="phoneNumber"
-            // value={formData.phoneNumber}
-            // onChange={handleChange}
+            {...register("phone")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="PhoneNumber"
           />
@@ -58,9 +59,7 @@ const ContactInfo = (props: Props) => {
           <input
             type="email"
             id="email"
-            name="email"
-            // value={formData.email}
-            // onChange={handleChange}
+            {...register("email")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="email"
           />
