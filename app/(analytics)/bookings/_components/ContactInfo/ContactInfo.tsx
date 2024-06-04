@@ -7,15 +7,9 @@ type Props = {};
 const ContactInfo = (props: Props) => {
   const { register, handleSubmit, reset } = useForm();
 
-  const handleOnSubmit = (data: FieldValues) => {
-    console.log(data);
-  };
   return (
     <div>
-      <form
-        onSubmit={handleSubmit(handleOnSubmit)}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <label htmlFor="Username" className="relative w-full block">
           <input
             type="text"
@@ -68,7 +62,7 @@ const ContactInfo = (props: Props) => {
             Email
           </span>
         </label>
-      </form>
+      </div>
     </div>
   );
 };
