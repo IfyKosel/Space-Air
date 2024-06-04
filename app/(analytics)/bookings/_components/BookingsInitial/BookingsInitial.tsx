@@ -7,9 +7,11 @@ import DataTable from "@/components/Table/DataTable";
 import NewBooking from "../NewBooking/NewBooking";
 import { Button } from "@/components/ui/button";
 
-type Props = {};
+type Props = {
+  onClick: () => void;
+};
 
-const BookingsInitial = (props: Props) => {
+const BookingsInitial = ({ onClick }: Props) => {
   const bookingsFilters = [
     { id: 1, name: "date" },
     { id: 4, name: "cabin" },
@@ -22,11 +24,14 @@ const BookingsInitial = (props: Props) => {
       <div className="flex flex-col gap-5">
         <h1 className="font-bold text-3xl">Bookings</h1>
 
-        <div className="flex justify-between w-full items-center h-16">
+        <div className="flex justify-between w-full lg:items-center h-fit gap-8">
           <Filters defaultFilters={bookingsFilters} />
-          <div className="flex h-full gap-2">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-end w-fit h-full gap-2 border border-transparent">
             <Export />
-            <Button className="w-fit h-full text-center text-white bg-[#4880FF] outline-none font-nunito text-sm rounded-[6px]">
+            <Button
+              onClick={onClick}
+              className="w-fit h-12 md:h-16 text-xs sm:text-sm text-center text-white bg-[#4880FF] outline-none font-nunito rounded-[6px]"
+            >
               New Booking
             </Button>
           </div>
