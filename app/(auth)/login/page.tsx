@@ -75,7 +75,7 @@ const Login = (props: Props) => {
               Sign In
             </button>
             <p>
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <Link href="" className="text-[#4880FF] underline">
                 Create Account
               </Link>
