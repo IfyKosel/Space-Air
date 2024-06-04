@@ -93,7 +93,7 @@ const Reviews = (props: Props) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {reviewDetails.map((item, index) => {
             return (
-              <div className="flex gap-2">
+              <div key={index} className="flex gap-2">
                 <div className="bg-white rounded-[14px] relative shadow-[3px_3px_26px_0px_rgba(0,0,0,0.16)] py-4 px-1 min-h-[10rem] flex flex-col justify-between gap-5">
                   <Image
                     src={item.photo}
