@@ -8,15 +8,6 @@ import { dashboardCol } from "@/components/Table/columns";
 import CabinChart from "@/components/Charts/CabinChart/CabinChart";
 import FlightChart from "@/components/Charts/FlightChart/FlightChart";
 import { OptionSelectProps, YearProps } from "@/types/types";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 type Props = {};
 
@@ -64,7 +55,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="p-5 border-[#E0E0E0] border-l-[1.2px] h-full font-nunito text-[#202224]">
+    <div className="p-5 border-[#E0E0E0] border-l-[1.2px] font-nunito text-[#202224]">
       <div className="flex flex-col gap-5">
         <h1 className="font-bold text-[22px] sm:text-3xl">Dashboard</h1>
         <Header />

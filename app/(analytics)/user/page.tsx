@@ -30,7 +30,7 @@ const User = (props: Props) => {
           </div>
         </div>
 
-        <div className="bg-white">
+        <div className="bg-white min-h-[50vh]">
           <DataTable columns={userCol} data={userRow} />
         </div>
       </div>

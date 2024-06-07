@@ -5,18 +5,12 @@ import {
   BookingsRowProps,
 } from "@/types/types";
 import { ColumnDef } from "@tanstack/react-table";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { Button } from "../ui/button";
-import Image from "next/image";
-import Menu from "@/components/Table/assest/menu.svg";
 import { Checkbox } from "../ui/checkbox";
+import {
+  BookingsDropdown,
+  DashboardDropdown,
+  UserDropdown,
+} from "../Dropdown/Dropdown";
 
 export const dashboardCol: ColumnDef<DashboardRowProps>[] = [
   {
@@ -79,27 +73,7 @@ export const dashboardCol: ColumnDef<DashboardRowProps>[] = [
     cell: ({ row }) => {
       const payment = row.original;
 
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <Image src={Menu} alt="Menu" className="w-auto" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-white">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.bookingId)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
+      return <DashboardDropdown />;
     },
   },
 ];
@@ -177,19 +151,9 @@ export const userCol: ColumnDef<UserRowProps>[] = [
       const payment = row.original;
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <Image src={Menu} alt="Menu" className="w-auto" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-white">
-            <DropdownMenuItem>View </DropdownMenuItem>
-            <DropdownMenuItem>Block</DropdownMenuItem>
-            <DropdownMenuItem>Delete</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div>
+          <UserDropdown />
+        </div>
       );
     },
   },
@@ -302,27 +266,7 @@ export const bookingsCol: ColumnDef<BookingsRowProps>[] = [
     cell: ({ row }) => {
       const payment = row.original;
 
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-6 p-0">
-              <span className="sr-only">Open menu</span>
-              <Image src={Menu} alt="Menu" className="w-auto" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-white">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.bookingId)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
+      return <BookingsDropdown />;
     },
   },
 ];
