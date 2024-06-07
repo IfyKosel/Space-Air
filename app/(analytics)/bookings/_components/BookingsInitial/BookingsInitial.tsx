@@ -4,14 +4,13 @@ import React from "react";
 import { bookingsRow } from "@/Utils/constant";
 import { bookingsCol } from "@/components/Table/columns";
 import DataTable from "@/components/Table/DataTable";
-import NewBooking from "../NewBooking/NewBooking";
 import { Button } from "@/components/ui/button";
 
 type Props = {
-  onClick: () => void;
+  setSelectedPage: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const BookingsInitial = ({ onClick }: Props) => {
+const BookingsInitial = ({ setSelectedPage }: Props) => {
   const bookingsFilters = [
     { id: 1, name: "date" },
     { id: 4, name: "cabin" },
@@ -29,8 +28,8 @@ const BookingsInitial = ({ onClick }: Props) => {
           <div className="flex flex-col sm:flex-row flex-wrap justify-end w-fit h-full gap-2 border border-transparent">
             <Export />
             <Button
-              onClick={onClick}
-              className="w-fit h-12 md:h-16 text-xs sm:text-sm text-center text-white bg-[#4880FF] outline-none font-nunito rounded-[6px]"
+              onClick={() => setSelectedPage("newBooking")}
+              className="w-fit h-12 md:h-16 text-sm text-center text-white bg-[#4880FF] outline-none font-nunito rounded-[6px]"
             >
               New Booking
             </Button>

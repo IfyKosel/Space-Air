@@ -28,7 +28,7 @@ const Flight = (props: Props) => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="w-fit sm:w-[120px] flex gap-1 sm:gap-2 font-semibold border-none text-xs sm:text-sm"
+          className="w-fit sm:w-[120px] flex gap-1 sm:gap-2 font-semibold border-none text-sm"
         >
           <span>Flight</span>
           <Image

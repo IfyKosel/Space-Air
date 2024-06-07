@@ -39,20 +39,12 @@ type Props = {};
 const Bookings = (props: Props) => {
   const [selectedPage, setSelectedPage] = useState<string>("bookingsInitial");
 
-  const handleNewBookingButton = () => {
-    setSelectedPage("newBooking");
-  };
-
-  const handleBookFlight = () => {
-    setSelectedPage("bookingPayment");
-  };
-
   const stepToRender = (key: string) => {
     switch (key) {
       case "bookingsInitial":
-        return <BookingsInitial onClick={handleNewBookingButton} />;
+        return <BookingsInitial setSelectedPage={setSelectedPage} />;
       case "newBooking":
-        return <NewBooking onClick={handleBookFlight} />;
+        return <NewBooking setSelectedPage={setSelectedPage} />;
       case "bookingPayment":
         return <BookingPayment />;
       default:

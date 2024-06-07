@@ -78,32 +78,13 @@ export const UserDropdown = () => {
   );
 };
 
-export const RolesPermissionDropdown = () => {
+// type Props = {
+// 	onClickView: () => void
+// }
+export const RolesPermissionDropdown = ({ onClickView }: any) => {
   const [showRolesPermissionDropdown, setShowRolesPermissionDropdown] =
     useState(false);
-  //   const [selectedPage, setSelectedPage] = useState<string>("bookingsInitial");
 
-  //   const handleView = () => {
-  //     setSelectedPage("newBooking");
-  //   };
-
-  //   const handleDelete = () => {
-  //     setSelectedPage("bookingPayment");
-  //   };
-
-  // const stepToRender = (key: string) => {
-  //   switch (key) {
-  // 	case "bookingsInitial":
-  // 	  return <BookingsInitial onClick={handleNewBookingButton} />;
-  // 	case "newBooking":
-  // 	  return <NewBooking onClick={handleBookFlight} />;
-  // 	case "bookingPayment":
-  // 	  return <BookingPayment />;
-  // 	default:
-  // 	  break;
-  //   }
-  // };
-  // return <div>{stepToRender(selectedPage)}</div>;
   return (
     <div className="relative">
       <button
@@ -118,7 +99,7 @@ export const RolesPermissionDropdown = () => {
       {showRolesPermissionDropdown && (
         <div className="bg-white rounded-[6px] p-4 absolute z-[100] right-4 w-24 shadow-[0_3px_6px_rgba(0,0,0,0.15)]">
           <ul className="flex flex-col gap-4">
-            <li>View</li>
+            <li onClick={onClickView}>View</li>
             <li>Delete</li>
             <li>Block</li>
           </ul>

@@ -9,8 +9,10 @@ import { Checkbox } from "../ui/checkbox";
 import {
   BookingsDropdown,
   DashboardDropdown,
+  RolesPermissionDropdown,
   UserDropdown,
 } from "../Dropdown/Dropdown";
+import EditUser from "@/app/(analytics)/roles&permission/_components/EditUser/EditUser";
 
 export const dashboardCol: ColumnDef<DashboardRowProps>[] = [
   {
@@ -267,6 +269,87 @@ export const bookingsCol: ColumnDef<BookingsRowProps>[] = [
       const payment = row.original;
 
       return <BookingsDropdown />;
+    },
+  },
+];
+
+export const RolesPermissionCol: ColumnDef<UserRowProps>[] = [
+  {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
+    header: "Date",
+    accessorKey: "date",
+    cell: ({ row }) => <div className="">{row.getValue("date")}</div>,
+  },
+  {
+    header: "User ID",
+    accessorKey: "userID",
+    cell: ({ row }) => <div className="">{row.getValue("userID")}</div>,
+  },
+  {
+    header: "First Name",
+    accessorKey: "firstName",
+    cell: ({ row }) => <div className="">{row.getValue("firstName")}</div>,
+  },
+  {
+    header: "Last Name",
+    accessorKey: "lastName",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("lastName")}</div>
+    ),
+  },
+  {
+    header: "Phone Number",
+    accessorKey: "phone",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("phone")}</div>
+    ),
+  },
+  {
+    header: "Email",
+    accessorKey: "email",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("email")}</div>
+    ),
+  },
+  {
+    header: "Bookings",
+    accessorKey: "bookings",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("bookings")}</div>
+    ),
+  },
+  {
+    id: "actions",
+    enableHiding: false,
+    cell: ({ row }) => {
+      const payment = row.original;
+
+      //   function onClickView(): void {
+      // 	return <EditUser />;
+      //   }
+
+      return <RolesPermissionDropdown />;
     },
   },
 ];

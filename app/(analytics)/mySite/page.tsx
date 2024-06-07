@@ -82,8 +82,6 @@ const MySite = (props: Props) => {
           {stepToRender(selectedPage)}
         </div>
       </div>
-      {/* <DataTable columns={userCol} data={userRow} />
-      <Cabin /> */}
     </div>
   );
 };

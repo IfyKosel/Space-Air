@@ -32,7 +32,7 @@ const Payment = (props: Props) => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="w-fit sm:w-[120px] flex gap-1 sm:gap-2 font-semibold border-none text-xs sm:text-sm"
+          className="w-fit sm:w-[120px] flex gap-1 sm:gap-2 font-semibold border-none text-sm"
         >
           <span>Payment</span>
           <Image
@@ -45,7 +45,7 @@ const Payment = (props: Props) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-white rounded-[16px] absolute -top-3 -left-10">
-        <div className="text-[#202224] w-[21.5rem] font-nunito">
+        <div className="text-[#202224] w-[11.5em] md:w-[21.5rem] font-nunito">
           <div className="px-5 pb-1.5">
             <h1 className="text-lg font-bold mt-2">Payment</h1>
             <div className="flex flex-wrap gap-3 py-5">

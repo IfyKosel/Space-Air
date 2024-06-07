@@ -6,7 +6,7 @@ import Divider from "@/app/(analytics)/roles&permission/assets/Divider.svg";
 
 type Props = {};
 
-const AddUser = (props: Props) => {
+const EditUser = (props: Props) => {
   const { register, handleSubmit, reset } = useForm();
 
   const handleOnSubmit = (data: FieldValues) => {
@@ -199,7 +199,7 @@ const AddUser = (props: Props) => {
             type="submit"
             className="text-white text-xs sm:text-sm w-[70%] md:w-[30%] bg-[#4880FF] px-4 py-2 rounded-[6px]"
           >
-            Add User
+            Update User
           </button>
         </div>
       </form>
@@ -207,4 +207,4 @@ const AddUser = (props: Props) => {
   );
 };
 
-export default AddUser;
+export default EditUser;

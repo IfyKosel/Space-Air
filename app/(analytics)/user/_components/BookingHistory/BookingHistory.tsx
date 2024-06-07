@@ -32,8 +32,8 @@ const BookingHistory = (props: Props) => {
             <div className="w-full">
               <Accordion type="single" collapsible>
                 <AccordionItem value={flight.id}>
-                  <div className="flex justify-between items-center w-full px-4 h-[6.25rem]">
-                    <div className="w-[65%] flex justify-around items-center">
+                  <div className="flex justify-between items-center gap-3 w-full px-4 h-[6.25rem]">
+                    <div className="w-full sm:w-[65%] flex justify-around items-center gap-5  overflow-x-auto">
                       <div className="flex flex-col gap-1 items-center">
                         <Image
                           src={Gulf}
@@ -59,12 +59,14 @@ const BookingHistory = (props: Props) => {
                         <span className="text-[#868686] text-center text-xs md:text-sm">
                           {flight.estimatedTime}
                         </span>
-                        <Image
-                          src={Flight}
-                          alt="Flight"
-                          height={70}
-                          width={100}
-                        />
+                        <div className="w-24 sm:w-28">
+                          <Image
+                            src={Flight}
+                            alt="Flight"
+                            height={70}
+                            width={100}
+                          />
+                        </div>
                         <span className="text-[#868686] text-center text-[10px] md:text-xs">
                           {flight.desc}
                         </span>
@@ -78,7 +80,7 @@ const BookingHistory = (props: Props) => {
                         </p>
                       </div>
                     </div>
-                    <div className="w-[27%]">
+                    <div className="w-fit sm:w-[27%]">
                       <div className="flex flex-col">
                         <div className="flex flex-col justify-center gap-2 items-end text-end text-[#4880FF]">
                           <p className="text-[10px] sm:text-xs">

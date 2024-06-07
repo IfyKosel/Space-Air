@@ -5,27 +5,34 @@ import Export from "@/components/Export/Export";
 import DataTable from "@/components/Table/DataTable";
 import { userRow } from "@/Utils/constant";
 import { userCol } from "@/components/Table/columns";
-import NewUser from "./_components/NewUser/NewUser";
+import { Button } from "@/components/ui/button";
 
-type Props = {};
+type Props = {
+  onClick: () => void;
+};
 
-const User = (props: Props) => {
-  const userFilters = [
+const RolesInitial = ({ onClick }: Props) => {
+  const rolesFilters = [
     { id: 1, name: "date" },
     { id: 2, name: "name" },
     { id: 3, name: "flightAmount" },
   ];
 
   return (
-    <div className="py-6 px-4 text-[#202224] text-sm font-nunito">
+    <div className="text-[#202224] text-sm font-nunito">
       <div className="flex flex-col gap-5">
-        <h1 className="font-bold text-[22px] sm:text-3xl">Users</h1>
+        <h1 className="font-bold text-[22px] sm:text-3xl">User</h1>
 
         <div className="flex justify-between gap-8 w-full h-fit">
-          <Filter defaultFilters={userFilters} />
+          <Filter defaultFilters={rolesFilters} />
           <div className="flex flex-col sm:flex-row flex-wrap justify-end w-fit h-full gap-2 border border-transparent">
             <Export />
-            <NewUser />
+            <Button
+              onClick={onClick}
+              className="w-fit h-12 md:h-16 text-center text-white bg-[#4880FF] outline-none font-nunito text-xs sm:text-sm rounded-[6px]"
+            >
+              New User
+            </Button>
           </div>
         </div>
 
@@ -37,4 +44,4 @@ const User = (props: Props) => {
   );
 };
 
-export default User;
+export default RolesInitial;

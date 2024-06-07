@@ -74,9 +74,7 @@ const Filters = ({ defaultFilters }: Props) => {
               height={18}
               className="w-4 sm:auto"
             />
-            <span className="text-[#EA0234] text-xs sm:text-sm">
-              Reset Filter
-            </span>
+            <span className="text-[#EA0234] text-sm">Reset Filter</span>
           </button>
         </div>
       </div>
