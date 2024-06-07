@@ -4,6 +4,10 @@ import Column1 from "./_components/Column1/Column1";
 import Column2 from "./_components/Column2/Column2";
 import Reviews from "./_components/Reviews/Reviews";
 import Footer from "./_components/Footer/Footer";
+import DataTable from "@/components/Table/DataTable";
+import { userCol } from "@/components/Table/columns";
+import { userRow } from "@/Utils/constant";
+import Cabin from "@/components/Filters/Cabin/Cabin";
 
 type Props = {};
 

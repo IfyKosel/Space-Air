@@ -17,7 +17,7 @@ const CabinChart = (props: Props) => {
         fontSize: 12,
         fontWeight: "600",
       },
-      bottom: "10px",
+      bottom: "0px",
       left: "3%",
     },
     toolbox: {
@@ -30,8 +30,8 @@ const CabinChart = (props: Props) => {
       },
     },
     grid: {
-      left: "4%",
-      right: "1%",
+      left: "30px",
+      right: "5px",
     },
     calculable: true,
     xAxis: [
@@ -81,7 +81,7 @@ const CabinChart = (props: Props) => {
       {
         itemStyle: {
           color: "#3D42DF",
-          barborderRadius: [5],
+          barBorderRadius: [5],
         },
         name: "Economy",
         type: "bar",
@@ -90,7 +90,7 @@ const CabinChart = (props: Props) => {
       {
         itemStyle: {
           color: "#4379EE",
-          barborderRadius: [5],
+          barBorderRadius: [5],
         },
         name: "Premium Economy",
         type: "bar",
@@ -99,7 +99,7 @@ const CabinChart = (props: Props) => {
       {
         itemStyle: {
           color: "#00B69B",
-          barborderRadius: [5],
+          barBorderRadius: [5],
         },
         name: "Business Class",
         type: "bar",
@@ -108,7 +108,7 @@ const CabinChart = (props: Props) => {
       {
         itemStyle: {
           color: "#FF9500",
-          barborderRadius: [5],
+          barBorderRadius: [5],
         },
         name: "First Class",
         type: "bar",

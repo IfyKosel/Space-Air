@@ -49,7 +49,7 @@ const Cabin = (props: Props) => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="w-fit sm:w-[120px] flex gap-1 sm:gap-2 font-semibold border-none text-xs sm:text-sm"
+          className="w-fit sm:w-[120px] flex gap-1 sm:gap-2 font-semibold border-none text-sm"
         >
           <span>Cabin</span>
           <Image
@@ -62,7 +62,7 @@ const Cabin = (props: Props) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-white rounded-[16px] absolute -top-3 -left-10">
-        <div className="text-[#202224] w-[31rem] font-nunito">
+        <div className="text-[#202224] w-[11.5rem] min-[500px]:w-[22rem] lg:w-[31rem] font-nunito">
           <div className="px-5 pb-1.5">
             <h1 className="text-lg font-bold mt-2">Select Cabin</h1>
             <div className="flex flex-wrap gap-3 py-5">

@@ -30,8 +30,8 @@ const FlightChart = (props: Props) => {
       },
     },
     grid: {
-      left: "4%",
-      right: "1%",
+      left: "30px",
+      right: "5px",
     },
     calculable: true,
     xAxis: [
@@ -81,7 +81,7 @@ const FlightChart = (props: Props) => {
       {
         itemStyle: {
           color: "#00B69B",
-          barborderRadius: [3],
+          barBorderRadius: [3],
         },
         name: "Local",
         type: "bar",
@@ -90,7 +90,7 @@ const FlightChart = (props: Props) => {
       {
         itemStyle: {
           color: "#FF9500",
-          barborderRadius: [3],
+          barBorderRadius: [3],
         },
         name: "International",
         type: "bar",

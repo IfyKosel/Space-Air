@@ -27,3 +27,6 @@ body {
   max-width: 1536px;
   margin: 0 auto;
 }
+::-webkit-scrollbar {
+  display: none;
+}

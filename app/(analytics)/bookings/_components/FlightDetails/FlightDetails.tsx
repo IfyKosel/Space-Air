@@ -10,11 +10,17 @@ type Props = {};
 const FlightDetails = (props: Props) => {
   return (
     <article className="w-full">
-      <div className="w-full">
-        <div className="w-full flex flex-col gap-5">
-          <div className="w-full flex justify-around items-center h-fit">
+      <div className="overflow-x-auto w-full">
+        <div className="w-full flex flex-col gap-5 ">
+          <div className="w-full flex justify-around items-center gap-5 h-fit">
             <div className="flex flex-col gap-1 items-center">
-              <Image src={Oman} alt="airline Logo" height={45} width={45} />
+              <Image
+                src={Oman}
+                alt="airline Logo"
+                height={45}
+                width={45}
+                className="w-8 sm:w-auto"
+              />
               <span className="text-[10px] sm:text-xs text-[#868686]">
                 Oman Air
               </span>
@@ -34,7 +40,9 @@ const FlightDetails = (props: Props) => {
                   19:00
                 </span>
               </div>
-              <Image src={Flight} alt="Flight" height={70} width={100} />
+              <div className="w-24 sm:w-28">
+                <Image src={Flight} alt="Flight" height={70} width={100} />
+              </div>
               <div className="flex">
                 <Image src={Weight} alt="Weight" width={14} height={14} />
                 <span className="text-[#868686] text-center text-[10px] md:text-xs">
@@ -52,7 +60,7 @@ const FlightDetails = (props: Props) => {
               <p className="text-[10px] sm:text-sm">Monday, September 6</p>
             </div>
           </div>
-          <div className="w-full flex justify-between text-[#1D91CC] text-[10px] sm:text-xs">
+          <div className="w-full flex justify-between gap-5 text-[#1D91CC] text-[10px] sm:text-xs">
             <div className="bg-[#E8F4FA] px-2 py-1 rounded-[8px]">Economy</div>
             <p className="">Payment NGN 34,410,462</p>
           </div>

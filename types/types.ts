@@ -180,3 +180,20 @@ export type ChartOption = {
       review: string;
       ratings: number,
   }
+
+  export type PassengerFormData = {
+	passengers: {
+	  firstName: string;
+	  lastName: string;
+	  gender: string;
+	  passportNumber: string;
+	  day: string;
+	  month: string;
+	  year: string;
+	}[];
+  };
+  export interface countryList {
+	value: string;
+	label: string;
+  }
+  [];

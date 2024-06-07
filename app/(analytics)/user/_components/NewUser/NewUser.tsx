@@ -43,7 +43,7 @@ const NewUser = (props: Props) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button className="w-fit h-12 md:h-16 text-center text-white bg-[#4880FF] outline-none font-nunito text-xs sm:text-sm rounded-[6px]">
+        <Button className="w-fit h-12 md:h-16 text-center text-white bg-[#4880FF] outline-none font-nunito text-sm rounded-[6px]">
           New User
         </Button>
       </AlertDialogTrigger>
