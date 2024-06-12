@@ -68,13 +68,12 @@ const Login = (props: Props) => {
             </div>
           </div>
           <div className="flex flex-col items-center w-full text-center gap-2">
-            <Link
-              href="/dashboard"
+            <button
               type="submit"
               className="bg-[#4880FF] w-[80%] rounded-[6px] py-3 text-white"
             >
-              Sign In
-            </Link>
+              <Link href="/dashboard">Sign In</Link>
+            </button>
             <p>
               Don&apos;t have an account?{" "}
               <Link href="" className="text-[#4880FF] underline">
