@@ -8,12 +8,12 @@ import { FieldErrors } from "react-hook-form";
 
 type PassengerFormProps = {
   //   index: number;
-  //   register: any;
+  register: any;
   //   fields: any;
   //   errors: FieldErrors<PassengerFormData>;
 };
 
-const PassengerForm = (props: PassengerFormProps) => {
+const PassengerForm = ({ register }: PassengerFormProps) => {
   const [list, setList] = useState<countryList[]>([]);
   const currentDate = new Date();
 
@@ -45,6 +45,7 @@ const PassengerForm = (props: PassengerFormProps) => {
             <input
               type="text"
               id="first_name"
+              {...register("first_name")}
               className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2.5 bg-transparent placeholder-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
               placeholder="First Name"
             />
@@ -60,6 +61,7 @@ const PassengerForm = (props: PassengerFormProps) => {
             <input
               type="text"
               id="last_name"
+              {...register("last_name")}
               className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2.5 bg-transparent placeholder-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
               placeholder="Last Name"
             />
@@ -78,6 +80,7 @@ const PassengerForm = (props: PassengerFormProps) => {
             <select
               name=""
               id=""
+              {...register("gender")}
               className="peer w-full text-[#868686] border-[0.8px] border-[#ADADAD] rounded-[6px] py-2 px-2.5 bg-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
             >
               <option value="MALE">Male</option>
@@ -99,6 +102,7 @@ const PassengerForm = (props: PassengerFormProps) => {
               <select
                 name=""
                 id=""
+                {...register("birth_day")}
                 className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] flex items-center"
               >
                 {days.map((day: any) => (
@@ -113,6 +117,7 @@ const PassengerForm = (props: PassengerFormProps) => {
               <select
                 name=""
                 id=""
+                {...register("birth_month")}
                 className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] flex items-center"
               >
                 {months.map((month: any) => (
@@ -128,6 +133,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                 <input
                   type="text"
                   id="year"
+                  {...register("birth_year")}
                   className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] focus:ring-0 flex items-center"
                   placeholder="2024"
                 />
@@ -145,6 +151,7 @@ const PassengerForm = (props: PassengerFormProps) => {
               <input
                 type="text"
                 id="phone_number"
+                {...register("phone")}
                 className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2.5 bg-transparent placeholder-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
                 placeholder="+2348134650533"
               />
@@ -160,6 +167,7 @@ const PassengerForm = (props: PassengerFormProps) => {
               <input
                 type="text"
                 id="passport"
+                {...register("passport")}
                 className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2.5 bg-transparent placeholder-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
                 placeholder=""
               />
@@ -179,6 +187,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                 name=""
                 id="country"
                 defaultValue="Nigeria"
+                {...register("nationality")}
                 className="peer w-full text-[#868686] border-[0.8px] border-[#ADADAD] rounded-[6px] py-2 px-2.5 bg-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
               >
                 {list.map((item: any) => (
@@ -202,6 +211,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                 <select
                   name=""
                   id=""
+                  {...register("issuance_day")}
                   className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] flex items-center"
                 >
                   {days.map((day: any) => (
@@ -216,6 +226,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                 <select
                   name=""
                   id=""
+                  {...register("issuance_month")}
                   className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] flex items-center"
                 >
                   {months.map((month: any) => (
@@ -231,6 +242,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                   <input
                     type="text"
                     id="year"
+                    {...register("issuance_year")}
                     className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] focus:ring-0 flex items-center"
                     placeholder="2024"
                   />
@@ -248,6 +260,7 @@ const PassengerForm = (props: PassengerFormProps) => {
               <input
                 type="email"
                 id="email"
+                {...register("email")}
                 className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2.5 bg-transparent placeholder-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
                 placeholder=""
               />
@@ -259,10 +272,11 @@ const PassengerForm = (props: PassengerFormProps) => {
           </div>
 
           <div className="w-full">
-            <label htmlFor="inssuance" className="relative block rounded-md">
+            <label htmlFor="issuance" className="relative block rounded-md">
               <input
                 type="text"
-                id="inssuance"
+                id="issuance"
+                {...register("issuance_place")}
                 className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2.5 bg-transparent placeholder-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
                 placeholder="+2348134650533"
               />
@@ -278,6 +292,7 @@ const PassengerForm = (props: PassengerFormProps) => {
               <input
                 type="text"
                 id="birth_place"
+                {...register("birth_place")}
                 className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2.5 bg-transparent placeholder-transparent outline-none focus:border-[#1D91CC] focus:text-[#1D91CC]"
                 placeholder=""
               />
@@ -297,6 +312,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                 <select
                   name=""
                   id=""
+                  {...register("expiry_day")}
                   className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] flex items-center"
                 >
                   {days.map((day: any) => (
@@ -311,6 +327,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                 <select
                   name=""
                   id=""
+                  {...register("expiry_month")}
                   className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] flex items-center"
                 >
                   {months.map((month: any) => (
@@ -326,6 +343,7 @@ const PassengerForm = (props: PassengerFormProps) => {
                   <input
                     type="text"
                     id="year"
+                    {...register("expiry_year")}
                     className="peer w-full text-[#868686] py-2 px-2.5 bg-transparent outline-none focus:text-[#1D91CC] focus:ring-0 flex items-center"
                     placeholder="2024"
                   />
