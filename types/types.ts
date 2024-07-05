@@ -1,6 +1,8 @@
 import { dashboardRow, userRow } from "@/Utils/constant";
 import { StaticImageData } from "next/image";
 
+export type NewUser = Record<string, any>;
+
 export type SidebarItemProps = {
 	title: string;
 	href: string;

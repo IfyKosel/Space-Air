@@ -6,10 +6,6 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { FieldValues, useForm } from "react-hook-form";
@@ -22,14 +18,12 @@ type Props = {};
 const AddReview = (props: Props) => {
   const [addImage, setAddImage] = useState(Camera);
   const [rating, setRating] = useState<number>(0);
-  const { register, handleSubmit, reset, getValues } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const handleOnSubmit = (data: FieldValues) => {
     data.photo = addImage;
-    const formData = getValues();
-    // console.log(formData);
+    data.ratings = rating;
     console.log(data);
-    reset();
   };
 
   const handleFileSelect = (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +34,6 @@ const AddReview = (props: Props) => {
         reader.onload = () => {
           const result = reader.result as string;
           setAddImage(result);
-          // console.log('Image:', result);
         };
         reader.readAsDataURL(file);
       }
@@ -146,6 +139,7 @@ const AddReview = (props: Props) => {
                         width={20}
                         height={20}
                         onClick={() => handleStarClick(starValue)}
+                        className="cursor-pointer"
                       />
                     );
                   })}

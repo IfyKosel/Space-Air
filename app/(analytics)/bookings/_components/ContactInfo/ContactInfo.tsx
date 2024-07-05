@@ -2,11 +2,11 @@
 import React from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
-type Props = {};
+type Props = {
+  register: any;
+};
 
-const ContactInfo = (props: Props) => {
-  const { register, handleSubmit, reset } = useForm();
-
+const ContactInfo = ({ register }: Props) => {
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -14,7 +14,7 @@ const ContactInfo = (props: Props) => {
           <input
             type="text"
             id="FirstName"
-            {...register("first_name")}
+            {...register("contact_first_name")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="FirstName"
           />
@@ -27,7 +27,7 @@ const ContactInfo = (props: Props) => {
           <input
             type="text"
             id="lastname"
-            {...register("last_name")}
+            {...register("contact_last_name")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="lastname"
           />
@@ -40,7 +40,7 @@ const ContactInfo = (props: Props) => {
           <input
             type="text"
             id="PhoneNumber"
-            {...register("phone")}
+            {...register("contact_phone")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="PhoneNumber"
           />
@@ -53,7 +53,7 @@ const ContactInfo = (props: Props) => {
           <input
             type="email"
             id="email"
-            {...register("email")}
+            {...register("contact_email")}
             className="peer w-full border-[0.8px] border-[#ADADAD] rounded-[6px] py-1.5 px-2 bg-transparent placeholder-transparent outline-none"
             placeholder="email"
           />
